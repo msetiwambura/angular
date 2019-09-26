@@ -1,0 +1,226 @@
+<div class="row">
+    <mat-horizontal-stepper class="col-12 stretch-card" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup">
+            <div class="col-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form [formGroup]="firstFormGroup" class="forms-sample">
+                            <ng-template matStepLabel>Personal Details</ng-template>
+                            <div class="form-group row">
+                                <label for="firstname" class="col-sm-3  text-muted col-form-label">First Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="firstname"
+                                           [(ngModel)]="patientService.currentPatient.firstname"
+                                           [ngModelOptions]="{standalone: true}" placeholder="First name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="middlename" class="col-sm-3  text-muted col-form-label">Middle Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.middlename"
+                                           [ngModelOptions]="{standalone: true}" id="middlename"
+                                           placeholder="middle name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="surname" class="col-sm-3  text-muted col-form-label">Last Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="surname"
+                                           [(ngModel)]="patientService.currentPatient.surname"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Last name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="dob" class="col-sm-3  text-muted col-form-label">Date of Birth</label>
+                                <div class="input-group col-sm-9">
+                                    <input id="dateOfBirth" class="form-control" placeholder="Date of Birth" name="dob"
+                                           ngbDatepicker
+                                           #dob="ngbDatepicker" [(ngModel)]="patientService.currentPatient.dob"
+                                           [ngModelOptions]="{standalone: true}">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar" (click)="dob.toggle()"
+                                                type="button"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="nationality" class="col-sm-3  text-muted col-form-label">Nationality</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="nationality"
+                                           [(ngModel)]="patientService.currentPatient.nationality"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Nationality">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="tribe" class="col-sm-3  text-muted col-form-label">Tribe</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="tribe"
+                                           [(ngModel)]="patientService.currentPatient.tribe"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Tribe">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="referencenumber" class="col-sm-3  text-muted col-form-label">Reference#</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="referencenumber"
+                                           [(ngModel)]="patientService.currentPatient.referencenumber"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Reference#">
+                                </div>
+                            </div>
+                            <button mat-button matStepperNext type="submit" class="btn btn-success">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+            <div class="col-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form [formGroup]="secondFormGroup" class="forms-sample">
+                            <ng-template matStepLabel>Employer Details</ng-template>
+                            <div class="form-group row">
+                                <label for="registrationdate" class="col-sm-3  text-muted col-form-label">Date of
+                                    Registration</label>
+                                <div class="input-group col-sm-9">
+                                    <input id="registrationdate" class="form-control" placeholder="Date of Birth"
+                                           name="registrationdate" ngbDatepicker
+                                           #registrationdate="ngbDatepicker"
+                                           [(ngModel)]="patientService.currentPatient.dob"
+                                           [ngModelOptions]="{standalone: true}">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary calendar"
+                                                (click)="registrationdate.toggle()" type="button"><i
+                                                class="fa fa-calendar" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employername" class="col-sm-3  text-muted col-form-label">Employer Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.employername"
+                                           [ngModelOptions]="{standalone: true}" id="employername"
+                                           placeholder="Empolyer Name">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employerlocation" class="col-sm-3  text-muted col-form-label">Employer
+                                    Location</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.employerlocation"
+                                           [ngModelOptions]="{standalone: true}" id="employerlocation"
+                                           placeholder="Employer Location">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employeraddress" class="col-sm-3  text-muted col-form-label">Employer
+                                    Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.employeraddress"
+                                           [ngModelOptions]="{standalone: true}" id="employeraddress"
+                                           placeholder="Employer Address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employeremail" class="col-sm-3  text-muted col-form-label">Employer Email</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.employeremail"
+                                           [ngModelOptions]="{standalone: true}" id="employeremail"
+                                           placeholder="Employer Email">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="employertelephone" class="col-sm-3  text-muted col-form-label">Employer
+                                    Telephone</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control"
+                                           [(ngModel)]="patientService.currentPatient.employertelephone"
+                                           [ngModelOptions]="{standalone: true}" id="employertelephone"
+                                           placeholder="Employer Telephone">
+                                </div>
+                            </div>
+                            <button mat-button matStepperPrevious type="submit" class="btn btn-success">Back
+                            </button>&nbsp;&nbsp;
+                            <button mat-button matStepperNext class="btn btn-success">Next</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="thirdFormGroup">
+            <div class="col-12 stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <form class="forms-sample">
+                            <ng-template matStepLabel>Personal Dynamic</ng-template>
+                            <div class="form-group row">
+                                <label for="patientphonenumber" class="col-sm-3  text-muted col-form-label">Phone</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="patientphonenumber"
+                                           [(ngModel)]="patientService.currentPatient.patientphonenumber"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="patientaddress" class="col-sm-3  text-muted col-form-label">Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="patientaddress"
+                                           [(ngModel)]="patientService.currentPatient.patientaddress"
+                                           [ngModelOptions]="{standalone: true}" placeholder="Address">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="patientoccupation" class="col-sm-3  text-muted col-form-label">Occupation</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="patientoccupation"
+                                           [(ngModel)]="patientService.currentPatient.patientoccupation"
+                                           [ngModelOptions]="{standalone: true}"
+                                           placeholder="Occupation">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-sm-3 text-muted">Bill Type</label>
+                                <div class="col-sm-9">
+                                    <select name=""  id="select2-1" class="form-control">
+                                        <option value="">Select</option>
+                                        <option value="">Insurance</option>
+                                        <option value="">Cash</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="InsuranceID" class="col-sm-3  text-muted col-form-label">Insurance ID</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="InsuranceID"
+                                           [(ngModel)]="patientService.currentPatient.InsuranceID"
+                                           [ngModelOptions]="{standalone: true}"
+                                           placeholder="Insurance ID">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="emailaddress" class="col-sm-3  text-muted col-form-label">Email Address</label>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" id="emailaddress"
+                                           [(ngModel)]="patientService.currentPatient.emailaddress"
+                                           [ngModelOptions]="{standalone: true}"
+                                           placeholder="Email Address">
+                                </div>
+                            </div>
+                            <button mat-button matStepperPrevious class="btn btn-success">Back</button>&nbsp;&nbsp;
+                            <button mat-button class="btn btn-danger">Reset</button>&nbsp;&nbsp;
+                            <button mat-button class="btn btn-success "
+                                    (click)="registerPatients(patientService.currentPatient)"><i
+                                    class="fa fa-floppy-o"></i> Save
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

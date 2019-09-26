@@ -1,0 +1,44 @@
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <div *ngIf="id">
+            <li class="nav-item nav-profile">
+                <div class="nav-link">
+                    <div class="user-wrapper">
+                        <div class="text-wrapper">
+                            <p class="profile-name">Welcome</p>
+                            <div>
+                                <small class="designation text-muted">{{id}}</small>
+                                <span class="status-indicator online"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/dashboard" routerLinkActive="active"
+                   #dashboardLink="routerLinkActive">
+                    <i class="fa fa-tachometer"></i>
+                    <span class="menu-title">&nbsp;&nbsp;Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/register" routerLinkActive="active"
+                   #registerLink="routerLinkActive">
+                    <i class="fa fa-registered"></i>
+                <span class="menu-title">&nbsp;&nbsp;Register</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/forms" routerLinkActive="active">
+                    <i class="fa fa-plus"></i>
+                    <span class="menu-title">&nbsp;&nbsp;Add patient</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/patients" routerLinkActive="active">
+                    <i class="fa fa-eye"></i>
+                    <span class="menu-title">&nbsp;&nbsp; View patients</span>
+                </a>
+            </li>
+        </div>
+    </ul>
+</nav>
